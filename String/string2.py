@@ -1,4 +1,4 @@
-#double_char
+# double_char
 
 # Given a string, return a string where for every char in the original, there are two chars.
 
@@ -14,7 +14,7 @@ def double_char(str):
   
   return newstring
 
-#count_hi
+# count_hi
 # Return the number of times that the string "hi" appears anywhere in the given string.
 
 
@@ -55,7 +55,8 @@ def cat_dog(str):
 
 #count_code
 
-# Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+# Return the number of times that the string "code" appears anywhere in the given string, except we'll accept 
+# any letter for the 'd', so "cope" and "cooe" count.
 
 
 # count_code('aaacodebbb') → 1
@@ -72,7 +73,9 @@ def count_code(str):
   
  #end_other
 
-# Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string.
+# Given two strings, return True if either of the strings appears at the very end of the other string, 
+# ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). 
+# Note: s.lower() returns the lowercase version of a string.
 
 
 # end_other('Hiabc', 'abc') → True
@@ -89,7 +92,8 @@ def end_other(a, b):
     return False
  
 #xyz_there
-# Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+# Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.).
+# So "xxyz" counts but "x.xyz" does not.
 
 
 # xyz_there('abcxyz') → True
