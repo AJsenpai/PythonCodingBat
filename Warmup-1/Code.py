@@ -185,3 +185,53 @@ def missing_char(str, n):
   return str.replace(str[n],'')
 
 #####################################################################################################################################
+
+# front_back
+# Given a string, return a new string where the first and last chars have been exchanged.
+
+# front_back('code') → 'eodc'
+# front_back('a') → 'a'
+# front_back('ab') → 'ba'
+
+def front_back(str):
+  if len(str)<=1:
+    return str
+  
+  mid= str[1:len(str)-1]  #str[1:-1]    
+
+  return str[len(str)-1] + mid + str[0]
+
+
+# Alternate solution
+#########################
+
+def front_back(str):
+  if len(str)<=1:
+    return str
+    
+  return str[-1]+str[1:-1]+str[0]
+
+#####################################################################################################################################
+
+# Given a string, we'll say that the front is the first 3 chars of the string. 
+# If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+# front3('Java') → 'JavJavJav'
+# front3('Chocolate') → 'ChoChoCho'
+# front3('abc') → 'abcabcabc'
+
+def front3(str):
+  if len(str)<3:
+    return 3*str
+  else:
+    str=str[:3]
+    return 3*str
+  
+# Alternate solution
+#########################
+
+def front3(str):
+  return 3*str[:3]
+
+#####################################################################################################################################
+
