@@ -18,7 +18,7 @@ def hello_name(name):
 # make_abba('What', 'Up') → 'WhatUpUpWhat'
 
 def make_abba(a, b):
-  return (a+b)+(b+a)
+  return a+2*b+a
 
 ######################################################################################################################################
 
@@ -59,8 +59,8 @@ def make_out_word(out, word):
 # extra_end('Hi') → 'HiHiHi'
 
 def extra_end(str):
-  newstr=3*str[-2:]
-  return newstr
+  if len(str)>=2:
+    return str[-2:]*3
 
 ######################################################################################################################################
 
@@ -78,6 +78,12 @@ def first_two(str):
   
   return newstr
 
+#Alternate Solution
+######################
+
+def first_two(str):
+  return str[:2] if len(str)>2 else str
+
 ######################################################################################################################################
 
 # first_half
@@ -92,6 +98,12 @@ def first_half(str):
   newstr=str[:first_half]
   return newstr
 
+#Alternate Solution
+###########################
+
+def first_half(str):
+  return str[0:len(str)//2]
+
 ######################################################################################################################################
 
 # without_end
@@ -102,12 +114,10 @@ def first_half(str):
 # without_end('coding') → 'odin'
 
 def without_end(str):
+  return str[1:-1] if len(str)>=2 else str
   
-    newstr=str[1:-1]
-    return newstr
-
+  
 ######################################################################################################################################
-
 
 # combo_string
 # Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and 
@@ -146,6 +156,6 @@ def non_start(a, b):
 
 
 def left2(str):
-  return str[2:]+str[0:2]
+  return str[2:]+str[:2]
 
 ######################################################################################################################################
