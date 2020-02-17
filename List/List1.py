@@ -189,5 +189,13 @@ def make_ends(nums):
 def has23(nums):
   return True if 2 in nums or 3 in nums else False
 
+#Alternate Solution
+#####################
+
+def has23(nums):
+  return any(x in nums for x in [2,3])
+
+
+
 #####################################################################################################################################
 
