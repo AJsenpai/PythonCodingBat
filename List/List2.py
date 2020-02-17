@@ -12,6 +12,13 @@ def count_evens(nums):
       count+=1
   return count
 
+#Alternate Solution
+####################
+
+def count_evens(nums):
+  lst=[x for x in nums if x%2==0 ]
+  return len(lst)
+
 #####################################################################################################################################
 
 # big_diff
@@ -39,6 +46,15 @@ def big_diff(nums):
 def centered_average(nums):
   return ((sum(nums)-max(nums)-min(nums)) // (len(nums)-2))
 
+# Alternate Solution
+#####################
+
+def centered_average(nums):
+  nums.sort()
+  newlist=nums[1:len(nums)-1]
+  return (sum(newlist)//len(newlist))
+
+
 #####################################################################################################################################
 
 # sum13
@@ -63,6 +79,16 @@ def sum13(nums):
     i += 1
 
   return total
+
+# Alternate Solution
+#####################
+
+def sum13(nums):
+  while 13 in nums:
+    if nums.index(13)<len(nums)-1:
+        nums.pop(nums.index(13)+1)
+    nums.pop(nums.index(13))
+  return sum(nums)
 
 #####################################################################################################################################
 
@@ -106,5 +132,20 @@ def has22(nums):
     else:
       signal=0
   return True if signal==1 else False
+
+# Alternate Solution
+#####################
+
+def has22(nums):
+  # if 2 in nums and  nums.index(2)< len(nums)-1 :
+  #     return True if nums.pop(nums.index(2)+1)==2 else False
+  # else:
+  #     return False 
+  for index,value in enumerate(nums[:-1]):
+    if value==2 and nums[index+1]==2:
+      return True
+  else:
+    return False
+  
 
 #####################################################################################################################################
