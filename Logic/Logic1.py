@@ -16,6 +16,13 @@ def cigar_party(cigars, is_weekend):
   
   return False
 
+# Alternate Solution
+#####################
+
+def cigar_party(cigars, is_weekend):
+  return cigars>=40 if is_weekend else cigars in range (40,61)
+
+
 #####################################################################################################################################
 
 # date_fashion
@@ -38,7 +45,7 @@ def date_fashion(you, date):
 
 ##################################################################################################################################### 
 
-# quirrel_play
+# squirrel_play
 # The squirrels in Palo Alto spend most of the day playing. In particular, they play 
 # the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. 
 # ven an int temperature and a boolean is_summer, return True if the squirrels play and False otherwise.
@@ -52,10 +59,18 @@ def squirrel_play(temp, is_summer):
     return True if temp in range(60,101) else False
   else:
     return True if temp in range(60,91) else False
- 
+  
+# Alternate Solution
+#####################
+
+def squirrel_play(temp, is_summer):
+  return temp in range(60,101) if  is_summer else temp in range(60,91)
+  
+  #return temp in range(60, 101 if is_summer else 91) 
+
 #####################################################################################################################################
   
-# aught_speeding
+# caught_speeding
 # You are driving a little too fast, and a police officer stops you. Write code to compute the result, encoded as an int value: 
 # no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result
 # 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, your speed can be 5 higher in all cases.
@@ -93,6 +108,12 @@ def sorta_sum(a, b):
   add=a+b
   return add if add not in range(10,20) else  20
 
+# Alternate Solution
+############################
+
+def sorta_sum(a, b):
+  return 20 if a+b in  range(10,20) else a+b
+
 #####################################################################################################################################
 
 
@@ -116,6 +137,15 @@ def alarm_clock(day, vacation):
       return "7:00"
     else:
       return "10:00"
+    
+# Alternate Solution
+#####################
+
+def alarm_clock(day, vacation):
+  weekday_alarm= "7:00" if not vacation else "10:00"
+  weekend_alarm= "10:00" if not vacation else "off"
+  
+  return weekday_alarm if day not in [6,0] else weekend_alarm
 
 #####################################################################################################################################
 
@@ -132,6 +162,12 @@ def love6(a, b):
     return True
   else:
     return False
+  
+# Alternate Solution
+#######################
+
+def love6(a, b):
+  return 6 in (a,b) or abs(a-b)==6 or a+b==6
 
 #####################################################################################################################################
 
@@ -154,7 +190,7 @@ def in1to10(n, outside_mode):
   
 # near_ten
 # Given a non-negative number "num", return True if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing 
-# a by b, so (7 % 5) is 2. See also: Introduction to Mod
+# a by b, so (7 % 5) is 2. See also: https://codingbat.com/doc/practice/mod-introduction.html
 
 # near_ten(12) → True
 # near_ten(17) → False
